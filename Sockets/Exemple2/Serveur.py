@@ -1,5 +1,3 @@
-# Remarque: Après exécution du code, les voyelles ne sont pas remplacées par "#". Au lieu de cela, les caractères sont inversés
-
 import socket
 s = socket.socket()
 print("Socket cree avec succes")
@@ -14,15 +12,17 @@ while True:
     print('recpetion des donnees provenant de ', addr)
     data = c.recv(1024)
     
+    data=data.decode()
+    data =list(data)
+    print(data)
     
     for i in range (0, len(data)):
-        if(data[i]=='a' or data [i]=='e' or data[i]=='i' or data[i]=='o' or data[i]=='u' or data[i]=='A' or data[i]=='E' or data[i]=='I' or data[i]=='o'):
-            data= data.replace(i, '#')
-        else:
-            data=data+data[i]         
+        if (data[i] in "aeiouAEIOU"):
+            data[i]="#"       
    
-    if not data:
+    if  data == None:
         break
+    data="".join(data)
     c.sendall(data)
     c.close()
     
