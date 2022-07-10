@@ -1,3 +1,5 @@
+# Remarque: Après exécution du code, les voyelles ne sont pas remplacées par "#". Au lieu de cela, les caractères sont inversés
+
 import socket
 s = socket.socket()
 print("Socket cree avec succes")
