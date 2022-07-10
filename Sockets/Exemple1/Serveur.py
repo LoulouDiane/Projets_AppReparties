@@ -1,8 +1,8 @@
 import socket
 s=socket.socket()
 print ("Socket cree avec succes")
-port = 12345
-s.bind(('',port))
+port = 5000
+s.bind(('0.0.0.0',port))
 print ("socket attache a %s" %(port))
 s.listen(5)
 print ("socket en ecoute !!!")
@@ -14,6 +14,5 @@ while True:
 
     if not data:
         break
-c.sendall(data)
-c.close()
-    
+    c.sendall(data)
+    c.close()
