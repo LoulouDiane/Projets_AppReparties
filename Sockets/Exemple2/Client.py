@@ -8,3 +8,4 @@ input_string=input("Entrer les donnees a envoyer >")
 s.sendall(input_string.encode())
 print (s.recv(1024))
 s.close ()
+
